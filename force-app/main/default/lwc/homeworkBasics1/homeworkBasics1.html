@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title ="LWC Fundamentals">
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="text" value={name} label="Enter Name" onchange={handleChangeName}></lightning-input>
+            <lightning-input type="number" value={age} label="Enter Age" onchange={handleChangeAge}></lightning-input>            
+            <div> 
+              <br/>
+              I'm {name}, I'm {age} years old and persuing {courseValue} <br/>
+              <template if:true={fullname}>
+              My Instructor <b>{fullname}</b> is Awesome!!
+            </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

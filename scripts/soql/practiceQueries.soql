@@ -1,0 +1,6 @@
+
+SELECT ID, Name, Status__c FROM Salesforce_Project__c 
+WHERE Status__c != 'New'
+                
+
+

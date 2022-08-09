@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Lightning Record Form">
+        <div class="slds-var-m-around_medium">
+        
+            <lightning-record-form
+            layout-type="Compact"
+            columns="2"
+            record-id={recordID}
+            object-api-name={objectName}
+            fields={selectedFields}
+            onsuccess={showSuccessToast}
+            onerror={errorhandler}>   
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+</template>
