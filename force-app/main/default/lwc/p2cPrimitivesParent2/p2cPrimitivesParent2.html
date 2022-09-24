@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="P2C Primitives - 2">
+        <div class="slds-var-m-around_medium">
+            <lightning-accordion class="example-accordion">
+                <lightning-accordion-section name="Students" label="Students">
+                    <!--<strong>Students : </strong> <br/>-->
+                    <c-p2c-primitivies-child2 items={students}></c-p2c-primitivies-child2>
+                </lightning-accordion-section>
+                <lightning-accordion-section name="Fruits" label="Fruits">               
+                    <c-p2c-primitivies-child2 items={fruits}></c-p2c-primitivies-child2>
+                </lightning-accordion-section>
+                <lightning-accordion-section name="Animals" label="Animals">
+                    <c-p2c-primitivies-child2 items={animals}></c-p2c-primitivies-child2>
+                </lightning-accordion-section>
+            </lightning-accordion>
+        </div>
+    </lightning-card>
+</template>

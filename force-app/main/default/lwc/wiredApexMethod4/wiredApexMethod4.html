@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Opportunity by Stage" icon-name="standard:account">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+            label="Stage"
+            name="stage"
+            options={stageOptions}                
+            onchange={changeHandler}>
+            </lightning-combobox>
+            <template if:true={oppsbyStage.data}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={oppsbyStage.data}
+                    columns={columns}>
+                </lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+</template>

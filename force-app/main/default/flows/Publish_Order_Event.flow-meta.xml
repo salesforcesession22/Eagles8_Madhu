@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>Publish - Order Event {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Publish - Order Event</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Publish_Platform_Event</name>
+        <label>Publish Platform Event</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <inputAssignments>
+            <field>Has_Shipped__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Order_Number__c</field>
+            <value>
+                <stringValue>Test123</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Order_Event__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <screens>
+        <name>PublishEvent</name>
+        <label>PublishEvent</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Publish_Platform_Event</targetReference>
+        </connector>
+        <fields>
+            <name>Order_Number</name>
+            <dataType>String</dataType>
+            <fieldText>Order Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Can_be_shipped</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Can be shipped?</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Publish</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>PublishEvent</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+</Flow>

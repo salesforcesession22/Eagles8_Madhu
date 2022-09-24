@@ -1,0 +1,14 @@
+<template>
+    <template if:true={account.Name}>
+        <div>Account Name: <b>{account.Name}</b></div>
+    </template>
+    <template if:true={account.Type}>
+        <div>Type: <b>{account.Type}</b></div>
+    </template>
+    <template if:true={account.Industry}>
+        <div>Industry: <b>{account.Industry}</b></div>
+    </template>
+    <template if:true={account.AnnualRevenue}>
+        <div>Annual Revenue: <b>{account.AnnualRevenue}</b></div>
+    </template>
+</template>

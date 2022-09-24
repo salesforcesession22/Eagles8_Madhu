@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="HOME PAGE">
+       <div class="slds-var-m-around_medium">
+           <div>
+               <!--
+               Are you a first time customer? choose <a href="signupTemplate.html">Singup</a><br/>
+               Are you an existing customer? choose <a href="loginTemplate.html">Login</a><br/>
+               -->
+               Are you a first time customer? choose --> Singup<br/>
+               Are you an existing customer? choose --> Login<br/>
+           </div>
+           <div class="slds-align_absolute-center slds-var-m-top_small">
+               <lightning-button
+                   label="Login"
+                   variant="brand"
+                   class="slds-var-m-right_small"
+                   onclick={clickHandler}>
+               </lightning-button>
+               <lightning-button
+                   label="Signup"
+                   variant="neutral"
+                   onclick={clickHandler}>
+               </lightning-button>
+           </div>
+       </div>
+    </lightning-card>
+</template>

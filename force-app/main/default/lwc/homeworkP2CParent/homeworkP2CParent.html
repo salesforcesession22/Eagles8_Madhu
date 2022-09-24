@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Account Details Display - P2C Homework" icon-name="standard:account">
+    <div class="slds-var-m-around_medium">
+        <div class="slds-var-m-top_small">
+            <lightning-combobox 
+            label="Select an Account"
+            options={accountOptions}
+            value={selectedAccount}>
+            </lightning-combobox>
+        </div>
+        <div class="slds-var-m-top_small">
+            <lightning-button label="Show Details" variant ="brand" onclick={changeHandler}>                
+            </lightning-button>
+        </div>
+        <div class="slds-var-m-top_small">
+            <template if:true={selectedaccount}>
+                <c-homework-p-2-c-child recordid={selectedaccount} onrecordsuccess={messageHandler}></c-homework-p-2-c-child>
+            </template>
+        </div>
+        <!--<div class="slds-var-m-top_small">
+            <template if:true={info}>
+                <b>{info}</b>
+            </template>
+        </div>-->
+    </div>
+    </lightning-card>
+</template>

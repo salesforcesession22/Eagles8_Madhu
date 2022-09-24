@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="P2C &amp; C2P COMM">
+        <div class="slds-var-m-around_medium">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <lightning-combobox
+                        label="Select Object Name"
+                        name="Object"
+                        options={objectOptions}
+                        value={selectedObject}
+                        onchange={changeHandler}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col">
+                    <lightning-input
+                        label="Enter Record Id"
+                        name="Record"
+                        value={selectedRecord}
+                        onchange={changeHandler}>
+                    </lightning-input>
+                </div>
+            </div>
+            <div class="slds-align_absolute-center slds-var-m-top_small">
+                <lightning-button
+                    label="Show"
+                    variant="brand"
+                    onclick={showHandler}>
+                </lightning-button>
+            </div>
+            <template if:true={showModal}>
+                <c-record-detail-modal
+                    record-id={selectedRecord}
+                    object-name={selectedObject}
+                    onclose={closeHandler}>
+                </c-record-detail-modal>
+            </template>
+        </div>
+    </lightning-card>
+</template>

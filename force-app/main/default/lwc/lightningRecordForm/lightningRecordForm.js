@@ -9,7 +9,7 @@ import LASTNAME_FIELD from '@salesforce/schema/Contact.LastName';
 export default class LightningRecordForm extends LightningElement {
 
     selectedFields = [FIRSTNAME_FIELD,LASTNAME_FIELD];
-    recordID = '0035i000005Nv5lAAC';
+    recordID = '0035i000005Nv5wAAC';
     objectName = CONTACT_OBJECT;
    
     showSuccessToast() {

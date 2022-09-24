@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Create Record - Case" icon-name="standard:case">    
+        <div class="slds-var-m-around_medium">
+            <form class="case">
+                <lightning-input label="Subject" name="Subject" onchange={changeHandler}></lightning-input>
+                <lightning-combobox
+                label="Priority"
+                name="Priority"
+                options={priorityOptions}                
+                onchange={changeHandler}>
+                </lightning-combobox>
+                <lightning-textarea label="Description" name="Description" onchange={changeHandler}></lightning-textarea>
+                <div class="slds-var-p-top_x-small slds-align_absolute-center">
+                    <lightning-button label="Cancel" variant="neutral" onclick={restForm} class="slds-var-m-right_x-small"></lightning-button>
+                    <lightning-button label="Save" variant="brand" onclick={saveCase}></lightning-button>
+                </div>
+            </form>
+        </div>
+</lightning-card>
+</template>

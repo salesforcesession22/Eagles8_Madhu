@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="P2C Action at Parent 2">
+        <div class="slds-var-m-around_medium">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <lightning-combobox
+                        label="Progress Bar Size"
+                        options={barOptions}
+                        name="Bar Size"
+                        onchange={changeHandler}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col">
+                    <lightning-input
+                        label="Progress Bar Value"
+                        type="number"
+                        name="Bar Value"
+                        onchange={changeHandler}>
+                    </lightning-input>
+                </div>
+            </div>
+            <div class="slds-var-m-top_small">
+                <c-p2c-action-at-parent-child1
+                    value={progressValue}
+                    type={barSize}>
+                </c-p2c-action-at-parent-child1>
+            </div>
+        </div>
+    </lightning-card>
+</template>

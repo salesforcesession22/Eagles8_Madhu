@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="C2P - Custom Event with Data">
+        <div class="slds-var-m-around_medium">
+        <div class="slds-var-p-top_x-small">          
+        <!--Show Modal-->           
+            <lightning-button 
+            label="Show Modal"
+            variant="brand"
+            onclick={modalHandler}>
+            </lightning-button>
+            <template if:true={showModal}>
+                <!--Child Custom event prefix with on, no uppercase allowed-->
+                <!--The event operation is performed in Parent, passing that to Child-->
+                <c-modal-child-custom-event onclose={closeHandler}></c-modal-child-custom-event>
+            </template><br/>
+            <template if:true={info}>
+                <div class="slds-var-m-top_small">
+                <strong>{info}</strong> 
+                </div>                
+            </template>
+        </div>
+        <!--Show Contacts-->
+        <div class="slds-var-p-top_x-small">
+            <lightning-button 
+            label="Show Contacts"
+            variant="brand"            
+            onclick={contactHandler}>>
+            </lightning-button>
+            <template if:true={contacts}>
+                <div class="slds-var-m-top_small">
+                <p><b>Calling Apex to Display 10 Contacts</b></p>
+                </div><br/>
+                <c-display-results-records-child records={contacts}
+                columns={columns}
+                error={error}></c-display-results-records-child>
+            </template>
+        </div>
+        </div>
+    </lightning-card>
+</template>

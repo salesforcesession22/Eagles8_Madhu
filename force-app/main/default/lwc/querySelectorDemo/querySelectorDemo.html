@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Query Selectors - Demo">
+        <div class="slds-var-m-around_medium">
+            <!--single element-->
+            <h1>This is content from template!</h1>
+
+            <!--multiple elements-->
+            <template for:each={fruits} for:item="fruit">
+                <div key={fruit} class="child">{fruit}</div>
+            </template>
+            <br/>
+            <!--button-->
+            <lightning-button
+                label="Click Me"
+                onclick={clickHandler}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

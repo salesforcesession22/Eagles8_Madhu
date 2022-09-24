@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="SIGNUP PAGE">
+        <div class="slds-var-m-around_medium">
+            <!--username, password & other fields fields-->
+            <div>
+                <lightning-input
+                    label="FirstName"
+                    type="text">
+                </lightning-input>
+                <lightning-input
+                    label="LastName"
+                    type="text">
+                </lightning-input>
+                <lightning-input
+                    label="Email"
+                    type="email">
+                </lightning-input>
+                <lightning-input
+                    label="Username"
+                    type="text">
+                </lightning-input>
+                <lightning-input
+                    label="Password"
+                    type="password">
+                </lightning-input>
+            </div>
+            <!--signup & cancel buttons-->
+            <div class="slds-align_absolute-center slds-var-m-top_small">
+                <lightning-button
+                    label="Cancel"
+                    variant="neutral"
+                    class="slds-var-m-right_x-small"
+                    onclick={clickHandler}>
+                </lightning-button>
+                <lightning-button
+                    label="Signup"
+                    variant="brand"
+                    onclick={signupHandler}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Account - Picklist Values">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                label="Industry"
+                options={industryOptions}
+                value={selectedIndustry}
+                onchange={changeHandler1}>
+            </lightning-combobox><br/>
+            <div>Select Industry is <b>{selectedIndustry}</b></div><br/>
+            <lightning-combobox
+            label="Rating"
+            options={ratingOptions}
+            value={selectedRating}
+            onchange={changeHandler2}>
+            </lightning-combobox><br/>
+            <div>Select Rating is <b>{selectedRating}</b></div><br/>
+            <lightning-combobox
+            label="Type"
+            options={typeOptions}
+            value={selectedType}
+            onchange={changeHandler3}>
+            </lightning-combobox><br/>
+            <div>Select Type is <b>{selectedType}</b></div><br/>
+        </div>
+    </lightning-card>
+</template>

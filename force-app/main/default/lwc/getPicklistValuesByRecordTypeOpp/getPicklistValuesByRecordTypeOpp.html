@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title ="Opportunity - All Picklist">
+    <div class="slds-var-m-around_medium">
+        <lightning-combobox
+                label="Stage Name"
+                name ="stage"
+                options={stageOptions}
+                onchange={changeHandler}>
+        </lightning-combobox>
+        <lightning-combobox
+                label="Type"
+                name ="type"
+                options={typeOptions}
+                onchange={changeHandler}>
+        </lightning-combobox>
+        <lightning-combobox
+                label="Forecast Category"
+                name ="foreCategory"
+                options={forecastCategoryOptions}
+                onchange={changeHandler}>
+        </lightning-combobox>
+        <lightning-combobox
+                label="Forecast Category Names"
+                name ="foreCategoryNames"
+                options={forecastCategoryNamesOptions}
+                onchange={changeHandler}>
+        </lightning-combobox>
+        <lightning-combobox
+                label="Lead Source"
+                name ="leadsource"
+                options={leadSourceOptions}
+                onchange={changeHandler}>
+        </lightning-combobox>
+        <lightning-combobox
+                label="Delivery Installation Status"
+                name ="delInsStatus"
+                options={deliveryInstallationStatusOptions}
+                onchange={changeHandler}>
+        </lightning-combobox><br/>
+        All selected options are displayed below,<br/>
+        Stage : <b>{selectedStage}</b><br/>
+        Type : <b>{selectedType}</b><br/>
+        Forecast Category : <b>{selectedforecastCategory}</b><br/>
+        Forecast Category Names : <b>{selectedforecastCategoryNames}</b><br/>
+        Lead Source : <b>{selectedleadSource}</b><br/>
+        Delivery Installation Status :  <b>{selecteddeliveryInstallationStatus}</b><br/>
+        
+    </div>
+    </lightning-card>
+</template>

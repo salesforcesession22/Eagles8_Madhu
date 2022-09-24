@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="LWC - Calculator SUM">
+        <div class="slds-var-m-around_medium">
+        <lightning-input type="text" name="input1" value={num1} label="First Number" onchange={handleAdd}> </lightning-input>
+        <lightning-input type="text" name="input2" value={num2} label="Second Number" onchange={handleAdd}> </lightning-input>
+        <br/>
+        <template if:true={sum}>Total is <b>{sum}</b></template>
+        </div>
+    </lightning-card>
+</template>

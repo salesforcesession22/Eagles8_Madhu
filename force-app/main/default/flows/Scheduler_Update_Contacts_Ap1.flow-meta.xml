@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>CreatedDateCompare</name>
+        <dataType>DateTime</dataType>
+        <expression>{!$Flow.CurrentDateTime} - 7</expression>
+    </formulas>
+    <interviewLabel>Scheduler - Update Contacts Ap1 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Scheduler - Update Contacts Ap1</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Default_Account</name>
+        <label>Get Default Account</label>
+        <locationX>176</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Contact_Records</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Default Account</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Contact_Records</name>
+        <label>Update Contact Records</label>
+        <locationX>176</locationX>
+        <locationY>396</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CreatedDate</field>
+            <operator>LessThanOrEqualTo</operator>
+            <value>
+                <elementReference>CreatedDateCompare</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>Get_Default_Account.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Default_Account</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Weekly</frequency>
+            <startDate>2022-09-07</startDate>
+            <startTime>00:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

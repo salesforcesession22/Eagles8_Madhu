@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="DISCONNECTED CALLBACK">
+        <div class="slds-var-m-around_medium">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <span>
+                    <lightning-input
+                        label="Enter your name"
+                        type="text"
+                        value={name}
+                        onchange={changeHandler}>
+                    </lightning-input>
+                    </span>
+                </div>
+                <div class="slds-col">
+                    <span>
+                    <lightning-button 
+                        label="Show/Hide"
+                        onclick={showHandler}>
+                    </lightning-button>
+                    </span>
+                </div>
+            </div>
+            <template if:true={showChild}>
+                <c-disconnected-callback-child name={name}></c-disconnected-callback-child>
+            </template>            
+        </div>
+    </lightning-card>
+</template>

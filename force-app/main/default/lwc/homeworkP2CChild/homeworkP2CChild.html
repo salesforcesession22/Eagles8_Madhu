@@ -1,0 +1,11 @@
+<template>
+    <div class="slds-var-m-around_medium">        
+        <lightning-record-form        
+        columns="2"
+        record-id={recordid}
+        object-api-name={objectName}
+        fields={selectedFields}
+        onsuccess={successHandler}>   
+        </lightning-record-form>
+    </div>
+</template>

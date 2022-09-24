@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="P2C Non-Primitive 2 : From Apex">
+        <div class="slds-var-m-around_medium">
+            <lightning-button label="Get Contacts" onclick={changeHandler}></lightning-button><br/>
+            <template if:true={contacts}> 
+                <c-p2c-non-primitives-child2 contacts={contacts}>                
+                </c-p2c-non-primitives-child2>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,22 @@
+<template>
+    <lightning-carousel>
+        <!--
+            carouselInfo => 3 carouselCards
+            for(Account acc : accList)
+            accList => carouselInfo
+            acc => info
+            Whenever we call for:each, key is mandatory in the tag inside template
+        -->
+        
+        <template for:each={carouselInfo} for:item="info">
+            <lightning-carousel-image
+                key={info.src}
+                src={info.src}
+                header={info.header}
+                description={info.description}
+                alternative-text={info.alternativeText}
+                href={info.href}>
+            </lightning-carousel-image>
+        </template>
+    </lightning-carousel>
+</template>

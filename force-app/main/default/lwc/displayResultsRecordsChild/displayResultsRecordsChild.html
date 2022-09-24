@@ -1,0 +1,12 @@
+<template>
+    <template if:true={records}>        
+        <lightning-datatable
+            key-field="id"
+            data={records}
+            columns={columns}>
+        </lightning-datatable>
+    </template>
+    <template if:true={error}>
+        {error}
+    </template>
+</template>

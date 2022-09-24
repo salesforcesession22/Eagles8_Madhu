@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>DescriptionMessage</name>
+        <dataType>String</dataType>
+        <expression>&quot;We have received the Order Number &quot; &amp;{!$Record.Order_Number__c}&amp;  &quot; to move for Shipping on &quot; &amp;TEXT({!$Flow.CurrentDate})&amp; &quot; , Kindly process.&quot;</expression>
+    </formulas>
+    <interviewLabel>Subscribe - Order Event {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subscribe - Order Event</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Task</name>
+        <label>Create Task</label>
+        <locationX>176</locationX>
+        <locationY>194</locationY>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>DescriptionMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Move to Shipping</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_Task</targetReference>
+        </connector>
+        <object>Order_Event__e</object>
+        <triggerType>PlatformEvent</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>
